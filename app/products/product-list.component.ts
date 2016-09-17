@@ -7,6 +7,8 @@ import {Component} from 'angular2/core';
 
 export class ProductListComponent {
     pageTitle: string = 'Product List';
+    imageWidth: number = 50;
+    imageMargin: number = 2; 
     products: any[] = [
         {
             productId: 2,
@@ -16,7 +18,7 @@ export class ProductListComponent {
             price: 32.99,
             description: 'product-2',
             starRating: 4.2,
-            imageUrl: "http://localhost:3000/assets/images/logo.jpg"
+            imageUrl: 'https://openclipart.org/download/261937/keyMetal.svg'
         },
         {
             productId: 5,
@@ -26,7 +28,7 @@ export class ProductListComponent {
             price: 11.99,
             description: 'product-2',
             starRating: 3.24,
-            imageUrl: "http://localhost:3000/assets/images/logo.jpg"
+            imageUrl: 'https://openclipart.org/download/261301/WoodLock-remix.svg'
         }
 
     ];

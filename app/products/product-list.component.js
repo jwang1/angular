@@ -21,6 +21,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             ProductListComponent = (function () {
                 function ProductListComponent() {
                     this.pageTitle = 'Product List';
+                    this.imageWidth = 50;
+                    this.imageMargin = 2;
                     this.products = [
                         {
                             productId: 2,
@@ -30,7 +32,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             price: 32.99,
                             description: 'product-2',
                             starRating: 4.2,
-                            imageUrl: "http://localhost:3000/assets/images/logo.jpg"
+                            imageUrl: 'https://openclipart.org/download/261937/keyMetal.svg'
                         },
                         {
                             productId: 5,
@@ -40,7 +42,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             price: 11.99,
                             description: 'product-2',
                             starRating: 3.24,
-                            imageUrl: "http://localhost:3000/assets/images/logo.jpg"
+                            imageUrl: 'https://openclipart.org/download/261301/WoodLock-remix.svg'
                         }
                     ];
                 }
