@@ -1,6 +1,6 @@
-<div class="panel panel-primary" >
+<div class="panel panel-primary">
     <div class='panel-headi'>
-        Product List
+        {{pageTitle}}
     </div>
     <div class="panel-body">
         <div class="row">
@@ -9,33 +9,40 @@
                 <input type='text'>
             </div>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="listFilter">
             <div class="col-md-6">
-                <h3>Filtered by: </h3>
+                <h3>Filtered by: {{listFilter}}</h3>
             </div>
         </div>
     </div>
-    
+
+    <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+
     <div class='table-responsive'>
-    <table class='table' *ngIf='products && products.length'>
-        <thead>
-            <tr>
-                <th>
-                    <button class='btn btn-primary' (click)='toggleImage()'>
-                        {{showImage ? 'Hide' : 'Show'}} Image
-                    </button>
-                </th>
-                <th>Product</th>
-                <th>Code</th>
-                <th>Available</th>
-                <th>Price</th>
-                <th>5 Star Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
-</div>
-
-
+        <table class='table' *ngIf='products && products.length'>
+            <thead>
+                <tr>
+                    <th>
+                        <button class='btn btn-primary' (click)='toggleImage()'>
+                            {{showImage ? 'Hide' : 'Show'}} Image
+                        </button>
+                    </th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>5 Star Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='#product of products'>
+                    <td></td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.starRating}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
