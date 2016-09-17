@@ -23,10 +23,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.pageTitle = 'Product List';
                     this.imageWidth = 50;
                     this.imageMargin = 2;
+                    this.showImage = false;
                     this.products = [
                         {
                             productId: 2,
-                            productName: "product 2",
+                            productName: "Annie",
                             productCode: 'product2',
                             releaseDate: 'March 18, 2016',
                             price: 32.99,
@@ -36,7 +37,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         },
                         {
                             productId: 5,
-                            productName: "product 5",
+                            productName: "Raymond",
                             productCode: 'product5',
                             releaseDate: 'June 18, 2016',
                             price: 11.99,
@@ -46,6 +47,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
+                ProductListComponent.prototype.toggleImage = function () {
+                    this.showImage = !this.showImage;
+                };
                 ProductListComponent = __decorate([
                     core_1.Component({
                         selector: 'pm-products',

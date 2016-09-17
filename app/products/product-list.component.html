@@ -40,7 +40,8 @@
                         <img [src]='product.imageUrl'
                              [title]='product.productName'
                              [style.width.px]='imageWidth'
-                             [style.margin.px]='imageMargin'/>
+                             [style.margin.px]='imageMargin'
+                             *ngIf='showImage'/>
                     </td>
                     <td>{{product.productName}}</td>
                     <td>{{product.productCode}}</td>
