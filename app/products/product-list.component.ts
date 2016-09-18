@@ -28,9 +28,9 @@ export class ProductListComponent {
             productName: "Lock",
             productCode: 'product5',
             releaseDate: 'June 18, 2016',
-            price: 11.99,
+            price: 11.59,
             description: 'product-2',
-            starRating: 3.24,
+            starRating: 3.4,
             imageUrl: 'https://openclipart.org/download/261301/WoodLock-remix.svg'
         }
 
