@@ -10,11 +10,12 @@ export class ProductListComponent {
     imageWidth: number = 50;
     imageMargin: number = 2; 
     showImage: boolean = false;
+    listFilter: string = 'cart';
     
     products: any[] = [
         {
             productId: 2,
-            productName: "Annie",
+            productName: "Key",
             productCode: 'product2',
             releaseDate: 'March 18, 2016',
             price: 32.99,
@@ -24,7 +25,7 @@ export class ProductListComponent {
         },
         {
             productId: 5,
-            productName: "Raymond",
+            productName: "Lock",
             productCode: 'product5',
             releaseDate: 'June 18, 2016',
             price: 11.99,

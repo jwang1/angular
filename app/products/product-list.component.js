@@ -24,10 +24,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
+                    this.listFilter = 'cart';
                     this.products = [
                         {
                             productId: 2,
-                            productName: "Annie",
+                            productName: "Key",
                             productCode: 'product2',
                             releaseDate: 'March 18, 2016',
                             price: 32.99,
@@ -37,7 +38,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         },
                         {
                             productId: 5,
-                            productName: "Raymond",
+                            productName: "Lock",
                             productCode: 'product5',
                             releaseDate: 'June 18, 2016',
                             price: 11.99,
