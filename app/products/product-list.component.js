@@ -1,4 +1,4 @@
-System.register(['angular2/core', './product-filter.pipe', '../shared/star.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './product-filter.pipe', '../shared/star.component', './product.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './product-filter.pipe', '../shared/star.compo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, product_filter_pipe_1, star_component_1;
+    var core_1, product_filter_pipe_1, star_component_1, product_service_1;
     var ProductListComponent;
     return {
         setters:[
@@ -22,40 +22,27 @@ System.register(['angular2/core', './product-filter.pipe', '../shared/star.compo
             },
             function (star_component_1_1) {
                 star_component_1 = star_component_1_1;
+            },
+            function (product_service_1_1) {
+                product_service_1 = product_service_1_1;
             }],
         execute: function() {
             ProductListComponent = (function () {
-                function ProductListComponent() {
+                /* private _productService;
+                constructor(productService: ProductService) {
+                    this._productService = productService;
+                }*/
+                // the shortcut in TS
+                function ProductListComponent(_productService) {
+                    this._productService = _productService;
                     this.pageTitle = 'Product List';
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
-                    this.listFilter = 'k';
-                    this.products = [
-                        {
-                            productId: 2,
-                            productName: "Key",
-                            productCode: 'product2',
-                            releaseDate: 'March 18, 2016',
-                            price: 32.99,
-                            description: 'product-2',
-                            starRating: 4.2,
-                            imageUrl: 'https://openclipart.org/download/261937/keyMetal.svg'
-                        },
-                        {
-                            productId: 5,
-                            productName: "Lock",
-                            productCode: 'product5',
-                            releaseDate: 'June 18, 2016',
-                            price: 11.59,
-                            description: 'product-2',
-                            starRating: 3.4,
-                            imageUrl: 'https://openclipart.org/download/261301/WoodLock-remix.svg'
-                        }
-                    ];
                 }
                 ProductListComponent.prototype.ngOnInit = function () {
                     console.log("in OnInit hook...");
+                    this.products = this._productService.getProducts();
                 };
                 ProductListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
@@ -71,7 +58,7 @@ System.register(['angular2/core', './product-filter.pipe', '../shared/star.compo
                         pipes: [product_filter_pipe_1.ProductFilterPipe],
                         directives: [star_component_1.StarComponent]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [product_service_1.ProductService])
                 ], ProductListComponent);
                 return ProductListComponent;
             }());
