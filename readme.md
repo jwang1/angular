@@ -3,7 +3,7 @@ following
 **https://github.com/DeborahK/Angular2-GettingStarted/edit/master/APM%20-%20Start/readme.md**
 
 
-check the 20296cf commit comments, also copied in below, we need some SuperSet of HTML;  just like, TypeScript-to-JavaScript :
+check [this commit](https://github.com/jwang1/angular/commit/20296cf3295503a21c8bc589d9c78a9e4f3d363e) comments, also copied in below, we need some SuperSet of HTML;  just like, TypeScript-to-JavaScript :
 
 
 Fixing the BUG (onClick function name in start-component.html  was mis-typed in  onclick)  (there were no ways to CHECK this typo in development.   Yeah, TypeScript checks JavaScript types; but we also need similar checks for HTML or any other TEMPLATEs) ...  
