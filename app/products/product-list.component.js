@@ -48,6 +48,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
+                ProductListComponent.prototype.ngOnInit = function () {
+                    console.log("in OnInit hook...");
+                };
                 ProductListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
                 };
