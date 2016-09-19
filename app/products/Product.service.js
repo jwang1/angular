@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(['angular2/http', 'rxjs/Observable', "angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,39 @@ System.register(["angular2/core"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var http_1, Observable_1, core_1;
     var ProductService;
     return {
         setters:[
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
+            },
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
             ProductService = (function () {
-                function ProductService() {
+                //private _productUrl = 'api/products/products.json';   // not working
+                //private _productUrl = '/api/products/products.json';
+                function ProductService(_http) {
+                    this._http = _http;
+                    //private _productUrl = 'www.myWebService.com/api/products';
+                    this._productUrl = 'app/api/products/products.json'; // works (but why need prefix app)
                 }
                 ProductService.prototype.getProducts = function () {
+                    return this._http.get(this._productUrl)
+                        .map(function (response) { return response.json(); })
+                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+                        .catch(this.handleError);
+                };
+                ProductService.prototype.handleError = function (error) {
+                    console.error(error);
+                    return Observable_1.Observable.throw(error.json().error || 'Server error');
+                };
+                ProductService.prototype.getProducts_OLD = function () {
                     return [
                         {
                             productId: 2,
@@ -57,7 +78,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 };
                 ProductService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], ProductService);
                 return ProductService;
             }());
