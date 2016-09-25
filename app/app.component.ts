@@ -9,6 +9,7 @@ import {ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 import {ProductListComponent} from './products/product-list.component';
 import {ProductService} from './products/product.service';
 import {WelcomeComponent} from './home/welcome.component';
+import {ProductDetailComponent} from './products/product-detail.component';
 
 
 
@@ -44,7 +45,8 @@ import {WelcomeComponent} from './home/welcome.component';
 })
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
-    {path: '/products', name: 'Products', component: ProductListComponent}
+    {path: '/products', name: 'Products', component: ProductListComponent},
+    {path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
 ]) 
 export class AppComponent {
 
